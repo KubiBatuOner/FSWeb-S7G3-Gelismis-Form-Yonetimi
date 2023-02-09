@@ -4,7 +4,7 @@ function Form(props) {
   const { formData, handleChange, handleSubmit, disableButton } = props;
 
   return (
-    <form onSubmit={(event) => handleSubmit(event)}>
+    <form onSubmit={(event) => handleSubmit(event)} data-cy="form-submit">
       <p>
         <label htmlFor="isimArea">İsim-Soyisim: </label>
         <input
@@ -14,6 +14,7 @@ function Form(props) {
           placeholder="İsim-Soyisim"
           value={formData.isim}
           onChange={(event) => handleChange(event)}
+          data-cy="isim"
         />
       </p>
       <p>
@@ -25,6 +26,7 @@ function Form(props) {
           placeholder="E-mail"
           value={formData.email}
           onChange={(event) => handleChange(event)}
+          data-cy="email"
         />
       </p>
       <p>
@@ -36,6 +38,7 @@ function Form(props) {
           placeholder="Şifre"
           value={formData.sifre}
           onChange={(event) => handleChange(event)}
+          data-cy="sifre"
         />
       </p>
       <p>
@@ -45,11 +48,12 @@ function Form(props) {
           type="checkbox"
           value={formData.kosul}
           onChange={(event) => handleChange(event)}
+          data-cy="kosul"
         />
         <label htmlFor="kosulArea">Şartlar ve koşulları kabul ediyorum</label>
       </p>
       <p>
-        <button type="submit" disabled={disableButton}>
+        <button type="submit" disabled={disableButton} data-cy="buton">
           Gönder
         </button>
       </p>
